@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    <!DOCTYPE html>
+    ============================================================
+
+    Indica al navegador que este documento utiliza HTML5.
+
+    IMPORTANTE:
+    - Técnicamente NO es una etiqueta HTML.
+    - Es una declaración que indica el tipo de documento.
+    - Debe aparecer antes de <html>.
+    - No necesita etiqueta de cierre.
+
+    ¿Qué ocurre si lo quitamos?
+    Algunos navegadores pueden entrar en "Quirks Mode", un modo de
+    compatibilidad pensado para páginas web antiguas. Esto puede provocar
+    diferencias inesperadas al interpretar HTML y CSS.
+
+    SEO:
+    No mejora directamente el posicionamiento, pero utilizar un documento
+    HTML correctamente estructurado evita problemas técnicos.
+-->
+
+
+<html lang="es">
+<!--
+    ============================================================
+    <html>
+    ============================================================
+
+    Es el elemento raíz del documento.
+
+    Prácticamente TODO el documento HTML estará dentro de:
+
+        <html>
+            ...
+        </html>
+
+    ------------------------------------------------------------
+    ATRIBUTO lang
+    ------------------------------------------------------------
+
+    lang="es"
+
+    Indica que el idioma principal del documento es español.
+
+    Algunos ejemplos:
+
+        lang="es"       Español
+        lang="en"       Inglés
+        lang="fr"       Francés
+        lang="de"       Alemán
+        lang="pt"       Portugués
+
+    También podemos especificar variantes regionales:
+
+        lang="es-ES"    Español de España
+        lang="es-MX"    Español de México
+        lang="en-US"    Inglés de Estados Unidos
+        lang="en-GB"    Inglés británico
+
+    ACCESIBILIDAD:
+    Es importante porque los lectores de pantalla pueden utilizar esta
+    información para seleccionar la pronunciación adecuada.
+
+    SEO:
+    Ayuda a los buscadores y otras herramientas a comprender el idioma
+    principal del documento.
+
+    También existe el atributo "dir", relacionado con la dirección
+    del texto:
+
+        dir="ltr"       izquierda → derecha
+        dir="rtl"       derecha → izquierda
+
+    Por ejemplo, idiomas como árabe o hebreo pueden utilizar rtl.
+-->
+
+
+<head>
+    <!--
+        ========================================================
+        <head>
+        ========================================================
+
+        Contiene METADATOS e información relacionada con el documento.
+
+        Normalmente su contenido NO aparece directamente dentro de la
+        página visible.
+
+        Aquí suelen encontrarse elementos como:
+
+            <meta>
+            <title>
+            <link>
+            <style>
+            <script>
+
+        También es una zona fundamental para diferentes aspectos técnicos:
+
+        - SEO
+        - codificación de caracteres
+        - adaptación a móviles
+        - hojas de estilos
+        - favicon
+        - metadatos para redes sociales
+        - scripts
+        - información para buscadores
+
+        IMPORTANTE:
+
+        <head> y <header> NO son lo mismo.
+
+        <head>
+            Información/metadatos DEL DOCUMENTO.
+
+        <header>
+            Elemento visible y semántico que puede representar
+            la cabecera de una página o sección.
+    -->
+
+
+    <meta charset="UTF-8">
+    <!--
+        ========================================================
+        CODIFICACIÓN DE CARACTERES
+        ========================================================
+
+        <meta charset="UTF-8">
+
+        Establece UTF-8 como codificación del documento.
+
+        UTF-8 permite representar una enorme cantidad de caracteres:
+
+            á é í ó ú
+            ñ
+            €
+            ¿ ?
+            símbolos
+            alfabetos de múltiples idiomas
+            etc.
+
+        Sin una codificación correctamente definida podrían aparecer
+        caracteres extraños.
+
+        Por ejemplo:
+
+            España
+
+        podría terminar representándose incorrectamente si existe
+        una incompatibilidad de codificación.
+
+        BUENA PRÁCTICA:
+        Debe aparecer muy pronto dentro de <head>.
+
+        SEO:
+        No es una herramienta de posicionamiento por sí misma, pero evita
+        problemas técnicos en la interpretación del contenido.
+    -->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        ========================================================
+        VIEWPORT / DISEÑO RESPONSIVE
+        ========================================================
+
+        Esta etiqueta es fundamental para páginas adaptadas a móviles.
+
+        --------------------------------------------------------
+        name="viewport"
+        --------------------------------------------------------
+
+        Indica que estamos configurando el "viewport".
+
+        El viewport es, simplificando, el área que utiliza el navegador
+        para representar la página.
+
+        --------------------------------------------------------
+        width=device-width
+        --------------------------------------------------------
+
+        Hace que el ancho del viewport coincida con el ancho disponible
+        del dispositivo.
+
+        Es especialmente importante en teléfonos y tablets.
+
+        --------------------------------------------------------
+        initial-scale=1.0
+        --------------------------------------------------------
+
+        Establece el nivel inicial de zoom.
+
+        1.0 significa una escala inicial normal.
+
+        Existen otras propiedades posibles, pero hay que tener cuidado
+        especialmente con opciones que limiten el zoom.
+
+        Por ejemplo, evitar normalmente:
+
+            user-scalable=no
+
+        porque impedir al usuario ampliar la página puede provocar
+        problemas de ACCESIBILIDAD.
+
+        SEO:
+        Esta metaetiqueta no funciona como una "palabra clave SEO",
+        pero una correcta experiencia móvil forma parte de la calidad
+        técnica de una web.
+    -->
+
+
+    <title>Pepinos Albino</title>
+    <!--
+        ========================================================
+        <title>
+        ========================================================
+
+        Define el título del DOCUMENTO.
+
+        No hay que confundirlo con:
+
+            <h1>
+
+        <title> y <h1> cumplen funciones diferentes.
+
+        --------------------------------------------------------
+        ¿Dónde aparece <title>?
+        --------------------------------------------------------
+
+        Entre otros sitios, puede aparecer:
+
+        - en la pestaña del navegador;
+        - al guardar la página como favorito;
+        - en interfaces del navegador;
+        - potencialmente como título mostrado por un buscador.
+
+        --------------------------------------------------------
+        SEO
+        --------------------------------------------------------
+
+        Es uno de los elementos importantes para describir el contenido
+        y temática de una URL.
+
+        Conviene que cada página tenga un título descriptivo y específico.
+
+        En nuestro ejemplo:
+
+            <title>Pepinos Albino</title>
+
+        podría hacerse más descriptivo si el contenido realmente lo
+        justificase, por ejemplo:
+
+            <title>Pepinos Albinos | Pepinos Manolo</title>
+
+        NO conviene abusar repitiendo palabras artificialmente:
+
+            Pepinos, pepinos baratos, mejores pepinos, comprar pepinos...
+
+        Eso empeora la calidad del título.
+
+        IMPORTANTE:
+        Google y otros buscadores pueden decidir mostrar un título
+        diferente en sus resultados dependiendo de la consulta y del
+        contenido de la página.
+    -->
+
+
+    <!--
+        ========================================================
+        OTROS ELEMENTOS QUE PODRÍAMOS TENER EN <head>
+        ========================================================
+
+        Tu ejemplo es mínimo, pero una página real podría incluir:
+
+        --------------------------------------------------------
+        DESCRIPCIÓN
+        --------------------------------------------------------
+
+        <meta
+            name="description"
+            content="Información sobre los pepinos de Pepinos Manolo."
+        >
+
+        Sirve para describir brevemente la página.
+
+        Puede utilizarse como parte del snippet mostrado por buscadores,
+        aunque el buscador puede generar otro fragmento.
+
+        --------------------------------------------------------
+        CSS
+        --------------------------------------------------------
+
+        <link rel="stylesheet" href="styles.css">
+
+        Carga una hoja de estilos externa.
+
+        --------------------------------------------------------
+        FAVICON
+        --------------------------------------------------------
+
+        <link rel="icon" href="favicon.ico">
+
+        Define un icono para la página.
+
+        --------------------------------------------------------
+        CANONICAL
+        --------------------------------------------------------
+
+        <link rel="canonical" href="https://ejemplo.com/pepinos">
+
+        Tiene importancia en SEO cuando queremos señalar una URL
+        canónica entre URLs duplicadas o muy similares.
+
+        No debemos añadirla mecánicamente sin entender antes
+        la arquitectura de URLs del sitio.
+    -->
+
+</head>
+
+
+<body>
+    <!--
+        ========================================================
+        <body>
+        ========================================================
+
+        Contiene el contenido principal que forma parte de la página
+        presentada al usuario.
+
+        Aquí encontraremos normalmente:
+
+        - encabezados
+        - párrafos
+        - imágenes
+        - enlaces
+        - listas
+        - tablas
+        - formularios
+        - vídeos
+        - botones
+        - contenido semántico
+
+        En una página más completa también utilizaríamos elementos como:
+
+            <header>
+            <nav>
+            <main>
+            <section>
+            <article>
+            <aside>
+            <footer>
+
+        Estos elementos permiten describir semánticamente las diferentes
+        partes del documento.
+    -->
+
+
+    <h1>Pepinos Manolo</h1>
+    <!--
+        ========================================================
+        <h1>
+        ========================================================
+
+        Es un encabezado de NIVEL 1.
+
+        HTML dispone de seis niveles:
+
+            <h1>
+            <h2>
+            <h3>
+            <h4>
+            <h5>
+            <h6>
+
+        Estos niveles expresan JERARQUÍA, no simplemente tamaño.
+
+        Una estructura podría ser:
+
+            h1  Pepinos Manolo
+
+                h2  Nuestros productos
+
+                    h3  Pepino albino
+                    h3  Pepino holandés
+
+                h2  Sobre nosotros
+
+                    h3  Nuestra historia
+
+        --------------------------------------------------------
+        IMPORTANTE
+        --------------------------------------------------------
+
+        No deberíamos escoger:
+
+            h1
+            h2
+            h3
+
+        simplemente porque uno aparece más grande que otro.
+
+        El aspecto visual se modifica mediante CSS.
+
+        Los encabezados deben representar la estructura lógica
+        del contenido.
+
+        --------------------------------------------------------
+        SEO
+        --------------------------------------------------------
+
+        Los encabezados ayudan a estructurar y contextualizar el contenido
+        de la página para usuarios, buscadores y otras herramientas.
+
+        No debemos utilizarlos para introducir palabras clave de forma
+        artificial.
+
+        --------------------------------------------------------
+        ACCESIBILIDAD
+        --------------------------------------------------------
+
+        Los usuarios de tecnologías de asistencia pueden utilizar los
+        encabezados para comprender y recorrer la estructura del documento.
+
+        Por eso una jerarquía lógica es importante.
+    -->
+
+
+    <h2>Me gusta comerlos solo</h2>
+    <!--
+        ========================================================
+        <h2>
+        ========================================================
+
+        Encabezado de nivel 2.
+
+        Semánticamente debería representar una sección dependiente
+        del contenido definido por el <h1>.
+
+        La idea conceptual sería:
+
+            H1: Pepinos Manolo
+                |
+                +--- H2: Me gusta comerlos solo
+
+        No significa simplemente:
+
+            "quiero texto un poco más pequeño que el H1".
+
+        Para cambiar tamaño utilizamos CSS.
+    -->
+
+
+    <h3>los mejores pepinos</h3>
+    <!--
+        ========================================================
+        <h3>
+        ========================================================
+
+        Encabezado de nivel 3.
+
+        Normalmente representa una subsección dentro del apartado
+        introducido por el <h2> anterior.
+
+        En este ejemplo la jerarquía sería:
+
+            Pepinos Manolo                         H1
+                └── Me gusta comerlos solo         H2
+                    └── Los mejores pepinos        H3
+
+        Esa relación semántica es mucho más importante que el tamaño
+        visual de las letras.
+
+        BUENA PRÁCTICA:
+        Conviene escribir los encabezados con una capitalización
+        coherente:
+
+            <h3>Los mejores pepinos</h3>
+    -->
+
+
+    <a
+        href="https://www.google.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Clic para ir a Google
+    </a>
+    <!--
+        ========================================================
+        <a> — ENLACES
+        ========================================================
+
+        <a> significa "anchor" y crea un enlace.
+
+        Es uno de los elementos fundamentales de la Web.
+
+        --------------------------------------------------------
+        href
+        --------------------------------------------------------
+
+        href indica el DESTINO.
+
+        Aquí:
+
+            href="https://www.google.com/"
+
+        estamos utilizando una URL absoluta.
+
+        También podemos utilizar una ruta relativa:
+
+            <a href="contacto.html">Contacto</a>
+
+        o:
+
+            <a href="/productos/pepino-albino">...</a>
+
+        Podemos enlazar una sección de la misma página:
+
+            <a href="#contacto">Ir a contacto</a>
+
+        y después:
+
+            <section id="contacto">
+                ...
+            </section>
+
+        También existen protocolos como:
+
+            href="mailto:correo@ejemplo.com"
+
+        o:
+
+            href="tel:+34988123456"
+
+        --------------------------------------------------------
+        target="_blank"
+        --------------------------------------------------------
+
+        Solicita abrir el enlace en un nuevo contexto de navegación,
+        normalmente una nueva pestaña.
+
+        No es obligatorio.
+
+        Sin target="_blank":
+
+            <a href="...">
+
+        normalmente navegaremos en la pestaña actual.
+
+        --------------------------------------------------------
+        rel="noopener noreferrer"
+        --------------------------------------------------------
+
+        "noopener" está relacionado con aislar la página original
+        respecto al nuevo contexto abierto y evita determinados problemas
+        asociados históricamente a window.opener.
+
+        "noreferrer" indica que no se envíe información de referrer
+        al destino y también tiene implicaciones de privacidad/analítica.
+
+        IMPORTANTE:
+        noopener y noreferrer no son exactamente lo mismo.
+
+        --------------------------------------------------------
+        TEXTO DEL ENLACE
+        --------------------------------------------------------
+
+        Actualmente tenemos:
+
+            Clic para ir a Google
+
+        Funciona, pero normalmente conviene que el texto del enlace
+        describa claramente el destino o acción.
+
+        Por ejemplo:
+
+            <a href="https://www.google.com/">
+                Visitar Google
+            </a>
+
+        sería más descriptivo que simplemente:
+
+            clic aquí
+
+        --------------------------------------------------------
+        SEO
+        --------------------------------------------------------
+
+        Los enlaces permiten descubrir y relacionar documentos.
+
+        El texto del enlace también proporciona contexto sobre el
+        recurso enlazado.
+
+        --------------------------------------------------------
+        ACCESIBILIDAD
+        --------------------------------------------------------
+
+        Un texto descriptivo permite comprender el propósito del enlace
+        incluso cuando se encuentra fuera del contexto del párrafo.
+    -->
+
+
+    <br>
+    <!--
+        ========================================================
+        <br>
+        ========================================================
+
+        Inserta un SALTO DE LÍNEA.
+
+        Es un elemento vacío, por lo que en HTML moderno escribimos:
+
+            <br>
+
+        No necesitamos:
+
+            <br></br>
+
+        --------------------------------------------------------
+        ¿CUÁNDO UTILIZARLO?
+        --------------------------------------------------------
+
+        Cuando el salto de línea forma parte realmente del contenido.
+
+        Por ejemplo, una dirección podría necesitar saltos:
+
+            Pepinos Manolo<br>
+            Calle del Pepino, 15<br>
+            32001 Ourense
+
+        --------------------------------------------------------
+        ¿CUÁNDO NO?
+        --------------------------------------------------------
+
+        NO deberíamos utilizar varios <br> para crear espacio:
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+        Si queremos separar visualmente dos elementos debemos usar CSS:
+
+            img {
+                margin-top: 20px;
+            }
+
+        HTML = estructura / significado
+        CSS  = presentación
+
+        En TU ejemplo el <br> está utilizándose principalmente para hacer
+        que la imagen aparezca en una nueva línea.
+
+        Funciona, pero en una página real normalmente controlaríamos
+        ese layout mediante CSS.
+    -->
+
+
+    <img
+        src="pepino.png"
+        alt="Logotipo de un pepino sabroso"
+        width="200"
+        height="200"
+        title="Pepino"
+    >
+    <!--
+        ========================================================
+        <img> — IMÁGENES
+        ========================================================
+
+        Inserta una imagen en el documento.
+
+        Es un elemento VACÍO.
+
+        Por tanto:
+
+            <img ...>
+
+        NO:
+
+            <img ...></img>
+
+        --------------------------------------------------------
+        src="pepino.png"
+        --------------------------------------------------------
+
+        "src" significa source.
+
+        Indica dónde se encuentra la imagen.
+
+        En este caso:
+
+            pepino.png
+
+        es una ruta relativa.
+
+        Si tenemos:
+
+            index.html
+            pepino.png
+
+        en la misma carpeta, funcionará.
+
+        Si la estructura fuera:
+
+            proyecto/
+                index.html
+                imagenes/
+                    pepino.png
+
+        utilizaríamos:
+
+            src="imagenes/pepino.png"
+
+        --------------------------------------------------------
+        alt="Logotipo de un pepino sabroso"
+        --------------------------------------------------------
+
+        "alt" significa texto alternativo.
+
+        Es uno de los atributos MÁS IMPORTANTES de una imagen desde
+        el punto de vista de accesibilidad.
+
+        Puede utilizarse cuando la imagen no puede mostrarse y permite
+        proporcionar una alternativa textual para tecnologías de
+        asistencia.
+
+        IMPORTANTE:
+
+        El texto alternativo debería transmitir la FUNCIÓN o información
+        relevante de la imagen en su contexto.
+
+        Si realmente es el logotipo de la empresa, probablemente sería
+        más útil algo como:
+
+            alt="Pepinos Manolo"
+
+        que:
+
+            alt="Logotipo de un pepino sabroso"
+
+        dependiendo de lo que comunique realmente la imagen.
+
+        --------------------------------------------------------
+        IMÁGENES DECORATIVAS
+        --------------------------------------------------------
+
+        Si una imagen es puramente decorativa, puede ser correcto:
+
+            alt=""
+
+        Esto permite que determinadas tecnologías de asistencia
+        ignoren la imagen.
+
+        Por tanto:
+
+            alt=""
+
+        NO significa necesariamente que nos hayamos olvidado del alt.
+
+        Puede ser una decisión deliberada de accesibilidad.
+
+        --------------------------------------------------------
+        width="200"
+        height="200"
+        --------------------------------------------------------
+
+        Indican las dimensiones intrínsecas utilizadas para representar
+        la imagen:
+
+            width  → anchura
+            height → altura
+
+        Declarar ambas dimensiones permite al navegador conocer la
+        proporción y reservar espacio antes de que termine la descarga.
+
+        Esto puede ayudar a evitar que el contenido "salte" mientras
+        se carga la imagen, relacionado con CLS (Cumulative Layout Shift).
+
+        IMPORTANTE:
+        Si las proporciones declaradas no coinciden adecuadamente con
+        la imagen o se fuerzan incorrectamente mediante CSS, puede
+        aparecer deformada.
+
+        --------------------------------------------------------
+        title="Pepino"
+        --------------------------------------------------------
+
+        Proporciona información adicional.
+
+        En navegadores de escritorio puede aparecer como tooltip al
+        mantener el cursor sobre el elemento.
+
+        MUY IMPORTANTE:
+
+            title NO sustituye a alt.
+
+        No deberíamos hacer:
+
+            <img src="pepino.png" title="Pepinos Manolo">
+
+        pensando que eso hace innecesario:
+
+            alt="..."
+
+        Son atributos con funciones diferentes.
+
+        --------------------------------------------------------
+        RENDIMIENTO
+        --------------------------------------------------------
+
+        Para imágenes que aparecen más abajo en una página podemos
+        considerar:
+
+            loading="lazy"
+
+        Ejemplo:
+
+            <img
+                src="pepino.png"
+                alt="..."
+                width="200"
+                height="200"
+                loading="lazy"
+            >
+
+        Esto permite retrasar la carga de determinadas imágenes hasta
+        que se aproximan al área visible.
+
+        PERO:
+
+        No hay que añadir loading="lazy" automáticamente a todas las
+        imágenes.
+
+        Si la imagen es importante y aparece inmediatamente al abrir la
+        página, retrasarla puede ser contraproducente para el rendimiento
+        percibido y métricas como LCP.
+
+        --------------------------------------------------------
+        SEO
+        --------------------------------------------------------
+
+        Para imágenes conviene prestar atención a:
+
+        - contexto alrededor de la imagen;
+        - alt apropiado;
+        - dimensiones;
+        - peso del archivo;
+        - formato;
+        - responsive images;
+        - velocidad de carga.
+
+        NO debemos llenar "alt" artificialmente de palabras clave.
+
+        Mal ejemplo:
+
+            alt="pepino pepinos comprar pepinos baratos mejores pepinos"
+
+        Eso no ayuda al usuario y es una mala práctica.
+    -->
+
+
+    <!--
+        ========================================================
+        RESUMEN DE LA JERARQUÍA DE ESTE DOCUMENTO
+        ========================================================
+
+        El navegador recibe aproximadamente esta estructura:
+
+        html
+        │
+        ├── head
+        │   │
+        │   ├── meta charset
+        │   ├── meta viewport
+        │   └── title
+        │
+        └── body
+            │
+            ├── h1
+            ├── h2
+            ├── h3
+            ├── a
+            ├── br
+            └── img
+
+
+        ========================================================
+        SEPARACIÓN DE RESPONSABILIDADES
+        ========================================================
+
+        Una idea fundamental al aprender desarrollo web:
+
+        HTML
+            → estructura y semántica
+
+        CSS
+            → presentación y diseño
+
+        JavaScript
+            → comportamiento e interacción
+
+
+        Por ejemplo:
+
+        HTML dice:
+
+            "esto es el encabezado principal"
+
+                <h1>Pepinos Manolo</h1>
+
+        CSS dice:
+
+            "quiero que el encabezado tenga este aspecto"
+
+                h1 {
+                    font-size: 3rem;
+                    text-align: center;
+                }
+
+        JavaScript podría decir:
+
+            "cuando ocurra X, cambia el encabezado"
+
+
+        ========================================================
+        SEO: QUÉ ELEMENTOS DE ESTE EJEMPLO DEBES RECORDAR
+        ========================================================
+
+        Especialmente:
+
+        1. <html lang="es">
+           Define correctamente el idioma.
+
+        2. <title>
+           Describe el documento.
+
+        3. <h1>, <h2>, <h3>
+           Crean una jerarquía lógica del contenido.
+
+        4. <a href="...">
+           Conecta documentos y debe utilizar textos descriptivos.
+
+        5. <img alt="...">
+           Proporciona una alternativa textual cuando corresponde.
+
+        6. Contenido
+           Al final, las etiquetas no sustituyen a tener contenido
+           útil, claro y bien estructurado.
+
+
+        ========================================================
+        ACCESIBILIDAD: QUÉ DEBES RECORDAR
+        ========================================================
+
+        - Declarar el idioma.
+        - Mantener una jerarquía de encabezados lógica.
+        - Utilizar enlaces descriptivos.
+        - Escribir alt adecuado para imágenes informativas.
+        - No depender de title como sustituto de alt.
+        - No bloquear innecesariamente el zoom.
+        - Utilizar HTML por su significado, no simplemente por su aspecto.
+
+
+        ========================================================
+        POSIBLES MEJORAS DE ESTE EJEMPLO
+        ========================================================
+
+        A medida que avances podríamos convertir este documento en algo
+        semánticamente más completo usando:
+
+            <header>
+            <nav>
+            <main>
+            <section>
+            <footer>
+
+        Por ejemplo:
+
+            <body>
+
+                <header>
+                    ...
+                </header>
+
+                <main>
+                    ...
+                </main>
+
+                <footer>
+                    ...
+                </footer>
+
+            </body>
+
+        Pero para aprender los fundamentos, la estructura actual es
+        perfectamente válida como punto de partida.
+    -->
+
+
+</body>
+<!--
+    Cierra el contenido visible/principal del documento.
+-->
+
+
+</html>
+<!--
+    Cierra el elemento raíz <html>.
+
+    En este punto termina el documento HTML.
+-->
