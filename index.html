@@ -955,16 +955,620 @@
     
     -->
 
+      <!--
+    ============================================================
+    LISTAS EN HTML
+    ============================================================
+
+    HTML dispone de distintos tipos de listas.
+
+    En este ejemplo veremos:
+
+        <ul>  → lista desordenada
+        <ol>  → lista ordenada
+        <dl>  → lista de descripción
+-->
+
+
+<h2>Tipos de pepino</h2>
+
+<!--
+    ============================================================
+    1. LISTA DESORDENADA: <ul>
+    ============================================================
+
+    <ul> significa "Unordered List".
+
+    Se utiliza cuando queremos crear una lista en la que
+    el orden de los elementos NO es especialmente importante.
+
+    Por defecto, el navegador suele mostrar cada elemento
+    precedido por un punto o viñeta.
+
+    La estructura es:
+
+        <ul>
+            <li>Elemento</li>
+            <li>Elemento</li>
+        </ul>
+
+    Cada elemento de la lista se escribe utilizando <li>.
+
+    <li> significa "List Item".
+-->
+
+<ul>
+
+    <!--
+        Dentro del primer <li> tenemos además un enlace.
+
+        <a> crea un hipervínculo.
+
+        El atributo href indica la dirección a la que queremos
+        navegar cuando el usuario pulse sobre el enlace.
+
+        En este caso, al pulsar sobre "Pepino albino",
+        iremos a Google.
+    -->
+
+    <li>
+        <a href="https://www.google.com">Pepino albino</a>
+    </li>
+
+    <!--
+        Estos dos elementos solamente contienen texto.
+    -->
+
+    <li>Pepino moreno</li>
+    <li>Pepino rubio</li>
+
+</ul>
+
+
+<!--
+    ============================================================
+    2. LISTA ORDENADA: <ol>
+    ============================================================
+
+    <ol> significa "Ordered List".
+
+    A diferencia de <ul>, los elementos aparecen numerados.
+
+    Normalmente:
+
+        1. Primer elemento
+        2. Segundo elemento
+        3. Tercer elemento
+
+    Pero podemos modificar su comportamiento mediante atributos.
+-->
+
+<ol start="5" reversed>
+
+    <!--
+        start="5"
+
+        Indica el número desde el que debe comenzar la lista.
+
+        Si solamente tuviéramos:
+
+            <ol start="5">
+
+        obtendríamos:
+
+            5.
+            6.
+            7.
+
+
+        reversed
+
+        Es un atributo booleano.
+
+        Indica que queremos que la numeración se realice
+        en sentido descendente.
+
+        En este ejemplo tendremos:
+
+            5. Pepino albino
+            4. Pepino moreno
+            3. Pepino rubio
+    -->
+
+    <li>
+        <a href="https://www.google.com">Pepino albino</a>
+    </li>
+
+    <li>Pepino moreno</li>
+    <li>Pepino rubio</li>
+
+</ol>
+
+
+<!--
+    ============================================================
+    3. LISTA DE DESCRIPCIÓN: <dl>
+    ============================================================
+
+    <dl> significa "Description List".
+
+    Este tipo de lista es diferente a <ul> y <ol>.
+
+    Se utiliza para representar términos acompañados
+    de sus correspondientes descripciones.
+
+    Dentro encontramos principalmente:
+
+        <dt> → término
+        <dd> → descripción
+
+    Podemos imaginar:
+
+        TÉRMINO
+            descripción
+
+        TÉRMINO
+            descripción
+-->
+
+<dl>
+
+    <!--
+        <dt> contiene el término que queremos definir.
+        <dd> contiene su descripción.
+    -->
+
+    <dt>Pepino Albino</dt>
+    <dd>Variedad de pepino blanco</dd>
+
+    <dt>Pepino Albino</dt>
+    <dd>Variedad de pepino blanco</dd>
+
+    <dt>Pepino Kirby</dt>
+    <dd>Variedad de pepino muy pequeñito y rosa</dd>
+
+</dl>
+
+
+<!--
+    ============================================================
+    TABLAS EN HTML
+    ============================================================
+
+    <table> permite representar información tabular,
+    es decir, datos organizados mediante filas y columnas.
+
+    IMPORTANTE:
+
+    border="1" se utilizaba tradicionalmente para mostrar
+    los bordes de una tabla.
+
+    Para aprender la estructura de una tabla puede resultar
+    visualmente útil, pero actualmente la presentación debería
+    realizarse mediante CSS.
+
+    Por ejemplo:
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+    Lo mantenemos aquí únicamente para visualizar fácilmente
+    las celdas durante el aprendizaje.
+-->
+
+<table border="1">
+
+
+    <!--
+        ========================================================
+        <caption>
+        ========================================================
+
+        <caption> proporciona un título o descripción a la tabla.
+
+        No debemos confundirlo con un <h1>, <h2>, etc.
+
+        Está asociado específicamente con esta tabla.
+    -->
+
+    <caption>Lista de pedidos</caption>
+
+
+    <!--
+        ========================================================
+        <thead> - CABECERA
+        ========================================================
+
+        <thead> agrupa las filas correspondientes a la
+        cabecera de la tabla.
+    -->
+
+    <thead>
+
+        <!--
+            <tr> significa "Table Row".
+
+            Es decir:
+
+                FILA DE LA TABLA
+
+            Todo lo que coloquemos dentro de este <tr>
+            pertenece a la misma fila.
+        -->
+
+        <tr>
+
+            <!--
+                <th> significa "Table Header".
+
+                Representa una celda de CABECERA.
+
+                Los navegadores suelen mostrar su contenido
+                en negrita y centrado por defecto.
+            -->
+
+            <th>Nº PEDIDO</th>
+            <th>FECHA</th>
+            <th>IMPORTE</th>
+            <th>VER</th>
+
+
+            <!--
+                colspan permite que una celda ocupe
+                VARIAS COLUMNAS.
+
+                colspan="2"
+
+                significa:
+
+                "Esta celda ocupa el espacio correspondiente
+                 a dos columnas".
+
+                Debajo tendremos:
+
+                    editar | borrar
+
+                Por eso "ACCIÓN" ocupa dos columnas.
+            -->
+
+            <th colspan="2">ACCIÓN</th>
+
+        </tr>
+
+    </thead>
+
+
+    <!--
+        ========================================================
+        <tbody> - CUERPO
+        ========================================================
+
+        <tbody> contiene los datos principales de la tabla.
+
+        Dentro tendremos varias filas <tr>.
+    -->
+
+    <tbody>
+
+
+        <!-- PRIMER PEDIDO -->
+
+        <tr>
+
+            <!--
+                <td> significa "Table Data".
+
+                Es una celda normal que contiene datos.
+            -->
+
+            <td>#1234</td>
+            <td>12/12/2026</td>
+            <td>225 €</td>
+
+
+            <!--
+                Una celda también puede contener otros
+                elementos HTML.
+
+                En este caso contiene un botón.
+            -->
+
+            <td>
+                <button type="button">Clic</button>
+            </td>
+
+            <td>
+                <button type="button">Editar</button>
+            </td>
+
+            <td>
+                <button type="button">Borrar</button>
+            </td>
+
+        </tr>
+
+
+        <!-- SEGUNDO PEDIDO -->
+
+        <tr>
+            <td>#1234</td>
+            <td>12/12/2026</td>
+            <td>225 €</td>
+            <td>
+                <button type="button">Clic</button>
+            </td>
+            <td>
+                <button type="button">Editar</button>
+            </td>
+            <td>
+                <button type="button">Borrar</button>
+            </td>
+        </tr>
+
+
+        <!-- TERCER PEDIDO -->
+
+        <tr>
+            <td>#1234</td>
+            <td>12/12/2026</td>
+            <td>225 €</td>
+            <td>
+                <button type="button">Clic</button>
+            </td>
+            <td>
+                <button type="button">Editar</button>
+            </td>
+            <td>
+                <button type="button">Borrar</button>
+            </td>
+        </tr>
+
+
+        <!-- CUARTO PEDIDO -->
+
+        <tr>
+            <td>#1234</td>
+            <td>12/12/2026</td>
+            <td>225 €</td>
+            <td>
+                <button type="button">Clic</button>
+            </td>
+            <td>
+                <button type="button">Editar</button>
+            </td>
+            <td>
+                <button type="button">Borrar</button>
+            </td>
+        </tr>
+
+
+        <!-- QUINTO PEDIDO -->
+
+        <tr>
+            <td>#1234</td>
+            <td>12/12/2026</td>
+            <td>225 €</td>
+            <td>
+                <button type="button">Clic</button>
+            </td>
+            <td>
+                <button type="button">Editar</button>
+            </td>
+            <td>
+                <button type="button">Borrar</button>
+            </td>
+        </tr>
+
+    </tbody>
+
+
+    <!--
+        ========================================================
+        <tfoot> - PIE DE LA TABLA
+        ========================================================
+
+        <tfoot> agrupa las filas correspondientes al pie
+        o resumen de la tabla.
+
+        Puede utilizarse, por ejemplo, para:
+
+            - totales
+            - sumas
+            - resúmenes
+            - resultados finales
+
+        IMPORTANTE:
+
+        Dentro de <tfoot> colocamos una fila <tr>
+        y dentro de esa fila colocamos las celdas.
+
+        Por eso escribimos:
+
+            <tfoot>
+                <tr>
+                    <td>...</td>
+                </tr>
+            </tfoot>
+
+        y no dejamos directamente el <td> dentro de <tfoot>.
+    -->
+
+    <tfoot>
+
+        <tr>
+
+            <!--
+                colspan="6"
+
+                Hace que esta celda ocupe las SEIS columnas
+                de nuestra tabla.
+
+                Las seis columnas son:
+
+                    1. Nº PEDIDO
+                    2. FECHA
+                    3. IMPORTE
+                    4. VER
+                    5. EDITAR
+                    6. BORRAR
+            -->
+
+            <td colspan="6">
+                Total pedidos: 5
+            </td>
+
+        </tr>
+
+    </tfoot>
+
+</table>
+
+
+<!--
+    ============================================================
+    SALTOS DE LÍNEA
+    ============================================================
+
+    <br> provoca un salto de línea.
+
+    Aquí utilizamos varios para separar visualmente los ejemplos.
+-->
+
+<br>
+<br>
+<br>
+
+
+<!--
+    ============================================================
+    FORMULARIOS
+    ============================================================
+
+    <form> representa un formulario.
+
+    Los formularios permiten recoger información introducida
+    por el usuario.
+
+    Por ejemplo:
+
+        - nombre
+        - email
+        - contraseña
+        - fecha
+        - comentarios
+        - etc.
+
+    Más adelante veremos dos atributos fundamentales:
+
+        action
+        method
+
+    que permitirán decidir:
+
+        DÓNDE enviamos los datos
+        y
+        CÓMO enviamos los datos.
+-->
+
+<form>
+
+
+    <!--
+        ========================================================
+        <label>
+        ========================================================
+
+        <label> representa la etiqueta o descripción
+        asociada a un campo de formulario.
+
+        Aquí estamos utilizando una forma perfectamente válida
+        de asociar el texto "Nombre:" con el <input>:
+        colocar el propio <input> dentro del <label>.
+    -->
+
+    <label>
+
+        Nombre:
+
+
+        <!--
+            ====================================================
+            <input>
+            ====================================================
+
+            <input> permite al usuario introducir información.
+
+            type="text"
+
+                Indica que queremos un campo de texto.
+
+
+            id="nombre"
+
+                Proporciona un identificador al elemento.
+
+                El id debe ser único dentro de la página.
+
+
+            placeholder="Escribe tu nombre"
+
+                Muestra un texto orientativo mientras el
+                usuario todavía no ha escrito nada.
+
+
+            required
+
+                Indica al navegador que el campo es obligatorio.
+
+                Si intentamos enviar el formulario vacío,
+                el navegador normalmente impedirá el envío
+                y solicitará que completemos el campo.
+        -->
+
+        <input
+            id="nombre"
+            type="text"
+            placeholder="Escribe tu nombre"
+            required
+        >
+
+    </label>
+
+
+    <br>
+    <br>
+
+
+    <!--
+        ========================================================
+        BOTÓN DE ENVÍO
+        ========================================================
+
+        type="submit"
+
+        indica que este botón sirve para ENVIAR el formulario.
+
+        Cuando el usuario pulse "Enviar", el navegador intentará
+        enviar los datos contenidos en el formulario.
+    -->
+
+    <button type="submit">
+        Enviar
+    </button>
+
+</form>
+
+
+<br>
+<br>
+<br>
+
+
 
 </body>
-<!--
-    Cierra el contenido visible/principal del documento.
--->
-
-
 </html>
-<!--
-    Cierra el elemento raíz <html>.
-
-    En este punto termina el documento HTML.
--->
